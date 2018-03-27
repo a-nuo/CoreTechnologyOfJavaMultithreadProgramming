@@ -37,6 +37,7 @@ public class MyService {
 		try{
 			lock.lock();
 			System.out.println("signalAll_A time "+System.currentTimeMillis());
+			//注意此处为signalAll
 			conditionA.signalAll();
 		}finally{
 			lock.unlock();
@@ -46,6 +47,7 @@ public class MyService {
 		try{
 			lock.lock();
 			System.out.println("signalAll_B time "+System.currentTimeMillis());
+			//注意此处为signalAll
 			conditionB.signalAll();
 		}finally{
 			lock.unlock();
