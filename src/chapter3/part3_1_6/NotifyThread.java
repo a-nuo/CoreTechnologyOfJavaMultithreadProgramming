@@ -10,6 +10,7 @@ public class NotifyThread extends Thread{
 	@Override
 	public void run() {
 		synchronized(lock){
+			//唤醒A、B、C三个线程，但他们都不能立即执行，直到Notify线程同步块儿执行完毕，才能开始执行
 			System.out.println("notify begin ThreadName :1"+Thread.currentThread().getName());
 			lock.notify();
 			System.out.println("notify end ThreadName :1"+Thread.currentThread().getName());
